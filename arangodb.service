@@ -1,0 +1,18 @@
+[Unit]
+Description=ArangoDB container
+After=docker.socket
+Requires=docker.service
+
+[Service]
+Type=simple
+User=meow
+Group=meow
+Type=exec
+TimeoutStartSec=0
+Restart=no
+ExecStartPre=-/usr/bin/docker stop arango
+ExecStartPre=-/usr/bin/docker rm arango
+ExecStart=/usr/bin/docker run -p 8529:8529 -v /mnt/arango:/db --rm --name arango myarango
+
+[Install]
+WantedBy=multi-user.target
