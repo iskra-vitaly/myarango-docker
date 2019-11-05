@@ -4,9 +4,6 @@ After=docker.socket
 Requires=docker.service
 
 [Service]
-Type=simple
-User=meow
-Group=meow
 Type=exec
 TimeoutStartSec=0
 Restart=no
