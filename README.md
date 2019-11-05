@@ -8,3 +8,10 @@ The docker container starts with official arangodb/arangodb, and sets
 parameters
 
 SystemD unit runs the container exposing the port and mounting a dir from /mnt to the /db volume 
+
+Build & Install
+-------------------------------------------------------------------------------
+
+`docker build . -t myarango` to create the docker image
+
+Run install.sh to install systemd unit to the /etc/systemd
