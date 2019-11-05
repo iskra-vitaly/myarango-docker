@@ -1,0 +1,8 @@
+[Unit]
+Requires=arangodb.service
+After=arangodb.service
+Requires=arangodb-proxy.socket
+After=arangodb-proxy.socket
+
+[Service]
+ExecStart=/usr/lib/systemd/systemd-socket-proxyd 127.0.0.1:8529

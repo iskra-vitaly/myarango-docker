@@ -1,0 +1,6 @@
+[Socket]
+ListenStream=/run/arangodb.sock
+Accept=no
+
+[Install]
+WantedBy=sockets.target

@@ -9,6 +9,8 @@ TimeoutStartSec=0
 Restart=no
 ExecStartPre=-/usr/bin/docker create -p 8529:8529 -v /mnt/arango:/db --name arango myarango
 ExecStart=/usr/bin/docker start arango -a
+# No way to know if the service is started but we can at least wait a sec...
+ExecStartPost=-/usr/bin/sleep 4
 
 [Install]
 WantedBy=multi-user.target
